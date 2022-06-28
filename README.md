@@ -2,7 +2,9 @@
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop](https://github.com/anetaanette/pricing-component/blob/main/images/laptop.png?raw=true)
+
+![Mobile](https://github.com/anetaanette/pricing-component/blob/main/images/mobile.png?raw=true)
 
 ### Links
 
