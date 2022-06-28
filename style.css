@@ -2,6 +2,7 @@
 :root {
   --very-light-grayish-blue: hsl(240, 78%, 98%);
   --light-grayish-blue: hsl(234, 14%, 74%);
+  --shade: hsl(235, 12%, 78%);
   --grayish-blue: hsl(233, 13%, 49%);
   --dark-grayish-blue: hsl(232, 13%, 33%);
 }
@@ -165,16 +166,23 @@ body > .lower > .box {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0px 5px 15px 0px var(--light-grayish-blue);
-          box-shadow: 0px 5px 15px 0px var(--light-grayish-blue);
+  -webkit-box-shadow: 0px 5px 15px 0px var(--shade);
+          box-shadow: 0px 5px 15px 0px var(--shade);
 }
 
 body > .lower > .box > h2 {
   letter-spacing: 1px;
+  color: var(--grayish-blue);
 }
 
 body > .lower > .box > h3 {
   font-size: 3rem;
+  text-align: center;
+}
+
+body > .lower > .box > h3 > span {
+  font-size: 2rem;
+  text-align: center;
 }
 
 body > .lower > .box > p {
@@ -182,8 +190,8 @@ body > .lower > .box > p {
 }
 
 body > .lower > .box > button {
-  width: 12rem;
-  height: 2rem;
+  width: 14rem;
+  height: 2.5rem;
   color: white;
   letter-spacing: 1px;
   font-size: 0.7rem;
@@ -209,6 +217,10 @@ body > .lower > .lower-two {
   width: 21rem;
 }
 
+body > .lower > .lower-two > h2 {
+  color: white;
+}
+
 body > .lower > .lower-two > h3 {
   font-size: 3.5rem;
 }
@@ -220,6 +232,7 @@ body > .lower > .lower-two > p {
 body > .lower > .lower-two > button {
   background: white;
   color: #696fdd;
+  width: 15rem;
 }
 
 body > .lower > .lower-three {
@@ -269,5 +282,44 @@ body > footer > .attribution > a {
   height: 0;
   padding: 0.5rem;
   border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body > .upper {
+    padding: 2rem;
+  }
+  body > .lower {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body > .lower > .box {
+    border-radius: 0.6rem;
+    height: 24rem;
+    width: 19rem;
+    margin: 1rem;
+  }
+  body > footer {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
