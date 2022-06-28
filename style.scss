@@ -3,12 +3,14 @@
 
 // - Linear Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%)
 
-// - Very Light Grayish Blue: hsl(240, 78%, 98%)
-// - Light Grayish Blue: hsl(234, 14%, 74%)
-// - Grayish Blue: hsl(233, 13%, 49%)
-// - Dark Grayish Blue: hsl(232, 13%, 33%)
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap");
+:root {
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
 
 * {
   box-sizing: border-box;
@@ -18,10 +20,210 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--very-light-grayish-blue);
+  background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right top, left bottom;
+  background-size: 23%, 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > .upper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    > h1 {
+      color: var(--grayish-blue);
+      font-size: 2rem;
+      padding-bottom: 1rem;
+    }
+    > .upper-p {
+      display: flex;
+      align-items: center;
+      padding-bottom: 1rem;
+      > p {
+        padding: 1rem;
+        color: var(--grayish-blue);
+      }
+      /* The switch - the box around the slider */
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 45px;
+        height: 26px;
+      }
+
+      /* Hide default HTML checkbox */
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      /* The slider */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: hsl(236, 72%, 79%);
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 19px;
+        width: 19px;
+        left: 5px;
+        bottom: 3.5px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      input:checked + .slider {
+        background: linear-gradient(
+          90deg,
+          hsl(236, 72%, 79%),
+          hsl(237, 63%, 64%)
+        );
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px hsl(236, 72%, 79%);
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(17px);
+        -ms-transform: translateX(17px);
+        transform: translateX(17px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+    }
+  }
+  > .lower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > .box {
+      height: 24rem;
+      width: 19rem;
+      background-color: white;
+      text-align: center;
+      //margin: 1rem;
+      color: var(--dark-grayish-blue);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 5px 15px 0px var(--light-grayish-blue);
+      > h2 {
+        letter-spacing: 1px;
+      }
+      > h3 {
+        font-size: 3rem;
+      }
+      > p {
+        color: var(--grayish-blue);
+      }
+      > button {
+        width: 12rem;
+        height: 2rem;
+        color: white;
+        letter-spacing: 1px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        border-radius: 0.3rem;
+        border: none;
+        margin-top: 1rem;
+        background: linear-gradient(
+          90deg,
+          hsl(236, 72%, 79%),
+          hsl(237, 63%, 64%)
+        );
+      }
+    }
+    > .lower-one {
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+    > .lower-two {
+      background: linear-gradient(
+        120deg,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+      box-shadow: none;
+      border-radius: 0.5rem;
+      color: white;
+      height: 27rem;
+      width: 21rem;
+      > h3 {
+        font-size: 3.5rem;
+      }
+      > p {
+        color: white;
+      }
+      > button {
+        background: white;
+        color: hsl(237, 63%, 64%);
+      }
+    }
+    > .lower-three {
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+    > .box > * {
+      padding: 0.5rem;
+      font-weight: 600;
+    }
+  }
+  > footer {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    > .attribution {
+      font-size: 11px;
+      text-align: center;
+      > a {
+        color: hsl(228, 45%, 44%);
+        font-size: 12px;
+      }
+    }
+  }
 }
-.attribution a {
-  color: hsl(228, 45%, 44%);
+
+.flex {
+  display: flex;
+}
+.after-line::after {
+  content: "";
+  display: block;
+  width: 13rem;
+  height: 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.after-line-mid::after {
+  content: "";
+  display: block;
+  width: 15rem;
+  height: 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--light-grayish-blue);
 }
