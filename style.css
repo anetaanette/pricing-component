@@ -96,8 +96,8 @@ body > .upper > .upper-p .slider {
   right: 0;
   bottom: 0;
   background-color: #a3a8f0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 body > .upper > .upper-p .slider:before {
@@ -108,8 +108,8 @@ body > .upper > .upper-p .slider:before {
   left: 5px;
   bottom: 3.5px;
   background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 body > .upper > .upper-p input:checked + .slider {
@@ -180,11 +180,6 @@ body > .lower > .box > h3 {
   text-align: center;
 }
 
-body > .lower > .box > h3 > span {
-  font-size: 2rem;
-  text-align: center;
-}
-
 body > .lower > .box > p {
   color: var(--grayish-blue);
 }
@@ -201,6 +196,12 @@ body > .lower > .box > button {
   margin-top: 1rem;
   background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
   background: linear-gradient(90deg, #a3a8f0, #696fdd);
+}
+
+body > .lower > .box > button:hover {
+  background: white;
+  color: #696fdd;
+  border: 1px solid #696fdd;
 }
 
 body > .lower > .lower-one {
@@ -233,6 +234,12 @@ body > .lower > .lower-two > button {
   background: white;
   color: #696fdd;
   width: 15rem;
+}
+
+body > .lower > .lower-two > button:hover {
+  background: linear-gradient(120deg, #a3a8f0, #696fdd);
+  color: white;
+  border: 1px solid white;
 }
 
 body > .lower > .lower-three {
